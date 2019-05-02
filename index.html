@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="description" content="">
+    <link rel="shortcut icon" href="img/favicon2.ico">	
+    <title>Crime Data</title>
+    <!-- Custom styling -->
+	<link rel="stylesheet" href="css/style.css">  
+	<!--Google Visualization API-->
+	<script type="text/javascript"
+				src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="top-container">
+			<h1 class="title">Analysis Of Different Crimes In The United States<img class="map-image" src="usa_map.png" alt="Map of USA"></h1>
+		</div>
+		<div class="nav">
+			<ul class="nav-items">
+				<li><a class="link selected" href="index.html">HOME</a></li>
+				<li><a class="link" href="violentcrimes.html">VIOLENT CRIMES</a></li>
+				<li><a class="link" href="propertycrimes.html">PROPERTY CRIMES</a></li>
+				</ul>
+		</div>
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<h2>Introduction</h2>
+		<p>Public safety is one of the most fundamental rights of people. 
+			To understand the level of public safety in an area, it is important to look at their crime rates. 
+			Identifying regions with high crime rates allows for further investigation of underlying reasons for crimes, 
+			and it also allows policymakers to deal with high (or increased) crime rates in certain region. </p>
+		<br />
+		<h3>Overview</h3>
+		<p>The analysis process of the project is to understand crime rates in the United States across time and across geographical regions. 
+				The years used in the analysis is from year 2010 to 2017. District of Columbia has been treated as a US state in the analsis.
+				Similarly, the geographical regions used in the analysis include New England, Mid-Atlantic, East North Central, West North Central,
+				South Atlantic, East South Central, West South Central, Mountain and Pacific. 
+				Violent crimes and property crimes are two groups of crimes used in analysis. The crime data came from the annual 
+				Uniform Crime Reports by the Federal Bureau of Investigation (FBI) on FBI’s official website.  </p>
+		<br />
+		<h3>Total Crime Growth Rate</h3>
+		<p>The Geo chart below shows the total crime (violent and property crimes combined) rate growth from 2010 to 2017 for each of the US states. 
+			The figure identifies North Dakota as the state with highest increase (39.67%) in crime rate from 2010 to 2017. Similarly, the chart also shows
+			that there has been decrease in crime rates for a good number of US states with Maine having the highest drop (37.06%) in crime rates.
+		</p>
+
+        <!--Geo plot using Google Visualization API-->
+		<div class="graph-container">
+			<div id="crime_Growth_percent"
+			style="width:900px; height:500px;"></div>
+		</div>
+		<br />
+		<h3>Total Crime Rate by State</h3>
+		<p>The bar graph below shows the total crime rate (per 100,000 population) for each state. The bar
+			graphs identifies District of Columbia as the state with least public safety as it had the highest crime rates for each year from 2010 to 2017.
+			 North Dakota, the state with highest crime growth rate, was identified as the state with least crime rate in year 2010.
+			 Different years can be selected from the dropdown menu.</p>
+
+		<br />
+		<br />
+
+		<div class="drop-down-menu">
+			<select id="year-select" class="form-control">
+				<option selected value="data/2010.csv">Year 2010</option>
+				<option value="data/2011.csv">Year 2011</option>
+				<option value="data/2012.csv">Year 2012</option>
+				<option value="data/2013.csv">Year 2013</option>
+				<option value="data/2014.csv">Year 2014</option>
+				<option value="data/2015.csv">Year 2015</option>
+				<option value="data/2016.csv">Year 2016</option>
+				<option value="data/2017.csv">Year 2017</option>
+			</select>
+		</div>
+        <div class="graph-container">
+            <div id="chart-area">
+				
+			</div>
+		</div>
+		<h3>Total Crime Rate by Region</h3>
+		<p>The line plot below acts as a time-series plot for total crime rate for each region from 2010 to 2017.
+			The overall trend seems to be a decrease in total crime rate for each region. In 2010, Mid-Atlantic had the lowest crime rate. Similarly, 
+			 New England had the least crime rate in 2017.
+		</p>
+		
+		<div class="graph-container">
+            <div id="line-chart-area" style="width:1200px; height:700px;">		
+			</div>
+		</div>
+
+		<h3>Correlation between Violent and Property Crime Rates</h3>
+		<p>The bubble chart below captures the relationship between violent crime rates and property crime rates. The average crime rates (from 2010 to 2017) has
+			been used to plot the chart. The graph shows that the region with high violent crime rate seemed to also have high property crime rate. Similarly,
+			the regions with low property crime rate also seemed to have lower violent crime rate.
+		</p>
+		
+		<div class="graph-container">
+            <div id="bubble-chart-area" style="width:1300px; height:700px;">		
+			</div>
+        </div>
+    </div>
+
+    <!-- External JS libraries -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src = "js/d3-tip.js"></script>
+    <!-- Custom JS -->
+	<script src="js/main.js"></script>
+
+</body>
+</html>
+

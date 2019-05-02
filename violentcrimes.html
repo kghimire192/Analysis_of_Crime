@@ -1,0 +1,114 @@
+<!doctype html>
+<!-- violentcrimes.html -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="img/favicon2.ico">		
+    	<title>Violent Crime data</title>
+    	<!-- Custom styling -->
+		<link rel="stylesheet" href="css/style.css">  
+	
+		<script type="text/javascript"
+				src="https://www.gstatic.com/charts/loader.js"></script>
+		<!-- External JS libraries -->
+		<script src="https://d3js.org/d3.v5.min.js"></script>
+		<script src = "js/d3-tip.js"></script>
+		<!-- Custom JS -->
+		<script type="text/javascript" src="js/violentcrimes.js"></script>
+	</head>
+	<body>
+		<!-- Start -->
+		<div class="container">
+
+			<div class="top-container">
+				<h1 class="title">Analysis Of Different Crimes In The United States<img class="map-image" src="usa_map.png" alt="Map of USA"></h1>
+			</div>
+			<div class="nav">
+				<ul class="nav-items">
+					<li><a class="link" href="index.html">HOME</a></li>
+					<li><a class="link selected" href="violentcrimes.html">VIOLENT CRIMES</a></li>
+					<li><a class="link" href="propertycrimes.html">PROPERTY CRIMES</a></li>
+				</ul>
+			</div>
+		<!-- End -->
+			
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<h2>Violent Crimes</h2>
+			<p>The violent crimes used in the analysis include murder and manslaughter, rape, robbery and aggravated assault.</p>
+			<p>
+				The pie chart below shows the breakdown of the combined violent crimes in the United States from 2010 to 2017.
+				The aggravated assault was identified as the top one with 62.1% of the total violent crimes, whereas murder and manslaughter accounted
+				for only 1.3% of the total violent crimes.
+			</p>
+
+			<!--Pie chart-->
+			<div class="graph-container">	
+				<div id="total_violent_crimes"
+					style="width:850px; height:500px;"></div>
+			</div>
+
+			<h3>Violent Crime Rate by State</h3>
+			<p>The bar graph below shows the violent crime rate (per 100,000 population) for each state. 
+				The bar graphs identifies District of Columbia as the state the highest violent crime rates for each year 
+				from 2010 to 2017. Similarly, Maine and Vermont were identified as the two states with the lowest violent crime rates.
+				 Different years can be selected from the dropdown menu.</p>
+			
+
+			<br />
+			<br />
+
+			<!-- Drop down  -->
+			<div class="drop-down-menu">
+					<select id="year-select" class="form-control">
+						<option selected value="data/2010.csv">Year 2010</option>
+						<option value="data/2011.csv">Year 2011</option>
+						<option value="data/2012.csv">Year 2012</option>
+						<option value="data/2013.csv">Year 2013</option>
+						<option value="data/2014.csv">Year 2014</option>
+						<option value="data/2015.csv">Year 2015</option>
+						<option value="data/2016.csv">Year 2016</option>
+						<option value="data/2017.csv">Year 2017</option>
+					</select>
+			</div>
+			<!-- Bar Graph -->
+			<div class="graph-container">
+					<div id="chart-area">
+						
+					</div>
+			</div>
+
+			<h3>Violent Crime Growth Rate</h3>
+			<p>The Geo chart below shows the violent crime rate growth from 2010 to 2017 for each of the US states. 
+				The figure identifies South Dakota as the state with highest increase (72.51%) in violent crime rate from 2010 to 2017. 
+				Similarly, New Jersey
+				had the highest drop (23.84%) in violent crime rates.</p>
+			
+			
+			<!--Geo plot using Google Visualization API-->
+			<div class="graph-container">
+				<div id="violent_Growth_percent"
+				style="width:900px; height:500px;"></div>
+			</div>
+
+			<br />
+			<br />
+
+			<h3>Violent Crime Rate by Region</h3>
+			<p>The line plot below acts as a time-series plot for violent crime rate for each region from 2010 to 2017. 
+				The overall trend seems to be different for each region. West South Central had the highest violent crime rate in most of the years from 2010 to 2017.
+				It dropped its crime rate by 2013 and then again increased by 2017. Similarly, New England had the second lowest violent crime rate in 2010 and the lowest
+			in 2017.</p>
+
+			<div class="graph-container">
+				<div id="line-chart-area" style="width:1200px; height:700px;">	
+				</div>
+			</div>
+		</div>	
+		
+	</body>
+</html>
